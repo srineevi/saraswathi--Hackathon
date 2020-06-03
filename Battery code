@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException, JSONException {
+		JSONObject obj  = new JSONObject();
+		File file = new File("C:\\Users\\saraswathi\\Desktop\\cts\\Battery.txt");
+		BufferedReader bf = new BufferedReader(new FileReader(file));
+		String line=bf.readLine();
+		String readLine;
+		while((readLine=bf.readLine())!=null) {
+			String str=readLine;
+			str.equals("Foreground_activities");
+			line=bf.readLine();
+			obj.put("Foreground",str);
+			System.out.println(obj);
+			
+		}
+		
+		
+	}
+
+}
